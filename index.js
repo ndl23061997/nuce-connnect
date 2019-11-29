@@ -5,9 +5,9 @@ const axios = require('axios').default;
 const app = express();
 app.use(cors());
 target = 'http://daotao.nuce.edu.vn';
-app.use('/', proxy(target));
+app.use(/^(?!\/api\/).*/, proxy(target));
 
-app.post('/app/login', (req, res) => {
+app.post('/api/login', (req, res) => {
   axios
     .post('http://daotao.nuce.edu.vn', req.body, {
       headers: {
