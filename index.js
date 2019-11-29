@@ -21,4 +21,6 @@ app.post('/login', (req, res) => {
 });
 
 const port = process.env.PORT || 3000;
-app.listen(port);
+app.listen(port, () => {
+  console.log(`sever listen on port ${port}`);
+});
